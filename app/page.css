@@ -1,8 +1,12 @@
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   background: #0f172a;
   color: white;
+}
+
+.container {
+  padding-bottom: 100px;
 }
 
 /* NAVBAR */
@@ -36,31 +40,39 @@ body {
   color: #94a3b8;
 }
 
+/* DOWNLOAD BUTTON */
 .download-btn {
-  display: inline-block;
   margin-top: 25px;
-  padding: 14px 30px;
+  padding: 16px 40px;
   background: #22c55e;
   color: black;
-  border-radius: 30px;
-  text-decoration: none;
+  border-radius: 40px;
+  border: none;
   font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(34,197,94,0.4);
+  transition: 0.2s;
 }
 
-.available {
-  display: block;
-  margin-top: 10px;
+.download-btn:hover {
+  transform: scale(1.05);
+}
+
+/* RATING */
+.rating {
+  margin-top: 15px;
+  color: #facc15;
   font-size: 14px;
-  color: #64748b;
 }
 
-/* PHONE MOCKUP */
+/* PHONE */
 .phone {
   width: 300px;
   height: 550px;
   background: #1e293b;
   border-radius: 30px;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 30px 80px rgba(0,0,0,0.6);
 }
 
@@ -68,21 +80,16 @@ body {
   background: #0f172a;
   height: 100%;
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 30px;
+  overflow: hidden;
 }
 
-.avatar {
-  width: 80%;
-  height: 80px;
-  background: #334155;
-  border-radius: 15px;
-  margin-bottom: 20px;
+.screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* WHY SECTION */
+/* WHY */
 .why {
   padding: 80px 20px;
   text-align: center;
@@ -107,12 +114,25 @@ body {
 }
 
 .big {
-  font-size: 18px;
-  padding: 16px 40px;
+  font-size: 20px;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 40px 20px;
   color: #64748b;
+}
+
+/* STICKY */
+.sticky-download {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0f172a;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
 }
