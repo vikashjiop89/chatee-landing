@@ -3,168 +3,81 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [usersOnline, setUsersOnline] = useState(8421);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setUsersOnline((prev) => prev + Math.floor(Math.random() * 4));
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div style={{
-      minHeight: "100vh",
-      background: "radial-gradient(circle at top,#2b0036,#120018,#000)",
-      color: "#fff",
-      fontFamily: "Arial, sans-serif",
-      paddingBottom: "110px"
-    }}>
+    <main className="bg-[#0f0f14] text-white min-h-screen font-sans">
 
       {/* HERO */}
-      <div style={{ textAlign: "center", padding: "50px 20px 30px" }}>
-        <h1 style={{
-          fontSize: "30px",
-          fontWeight: "bold",
-          lineHeight: "1.3"
-        }}>
-          🔥 Chat Live With Verified Girls
+      <section className="flex flex-col items-center justify-center text-center px-6 pt-16 pb-20">
+
+        <span className="bg-white/10 px-4 py-1 rounded-full text-sm mb-4">
+          ● Girls Online Now
+        </span>
+
+        <h1 className="text-4xl font-bold leading-tight mb-4">
+          Private 1-to-1 Video Calls <br />
+          With Verified Indian Girls
         </h1>
 
-        <p style={{ marginTop: "10px", fontSize: "15px", opacity: 0.85 }}>
-          🟢 {usersOnline}+ Users Online Right Now
+        <p className="text-gray-400 max-w-md mb-6">
+          Exclusive access. Secure private calls. Recharge and start instantly.
         </p>
 
-        <p style={{ fontSize: "13px", opacity: 0.6, marginTop: "5px" }}>
-          Private • Secure • Instant Match
-        </p>
-      </div>
+        <a
+          href="#download"
+          className="bg-gradient-to-r from-pink-500 to-red-500 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:scale-105 transition"
+        >
+          Start Private Video Call
+        </a>
 
-      {/* PROFILE PREVIEW */}
-      <div style={{
-        display: "flex",
-        gap: "16px",
-        overflowX: "auto",
-        padding: "0 20px"
-      }}>
-        {["girl1.jpg","girl2.jpg","girl3.jpg"].map((img, i) => (
-          <div key={i} style={{
-            minWidth: "150px",
-            background: "#111",
-            borderRadius: "22px",
-            padding: "8px",
-            boxShadow: "0 0 25px rgba(255,0,120,0.5)"
-          }}>
-            <img
-              src={`/${img}`}
-              style={{
-                width: "100%",
-                height: "190px",
-                objectFit: "cover",
-                borderRadius: "18px"
-              }}
-            />
-            <div style={{
-              display: "flex",
-              alignItems: "center",
-              marginTop: "8px",
-              fontSize: "13px"
-            }}>
-              <span style={{
-                width: "9px",
-                height: "9px",
-                background: "limegreen",
-                borderRadius: "50%",
-                marginRight: "6px"
-              }}></span>
-              Live Now
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* PHONE MOCKUP */}
-      <div style={{ textAlign: "center", marginTop: "45px" }}>
-        <img
-          src="/phone.png"
-          style={{
-            width: "80%",
-            maxWidth: "340px",
-            borderRadius: "35px",
-            boxShadow: "0 25px 60px rgba(255,0,120,0.6)"
-          }}
-        />
-      </div>
+        <div className="mt-10">
+          <img
+            src="/phone.png"
+            alt="App Preview"
+            className="w-72 mx-auto drop-shadow-2xl"
+          />
+        </div>
+      </section>
 
       {/* SCREENSHOTS */}
-      <div style={{ padding: "40px 20px 20px" }}>
-        <h2 style={{ fontSize: "20px", marginBottom: "15px" }}>
-          App Preview
+      <section className="px-6 pb-20 text-center">
+        <h2 className="text-2xl font-semibold mb-6">
+          See How The App Looks
         </h2>
 
-        <div style={{
-          display: "flex",
-          gap: "15px",
-          overflowX: "auto"
-        }}>
-          <img src="/ss1.png" style={{ width: "160px", borderRadius: "22px" }} />
-          <img src="/ss2.png" style={{ width: "160px", borderRadius: "22px" }} />
-          <img src="/ss3.png" style={{ width: "160px", borderRadius: "22px" }} />
+        <div className="flex gap-4 overflow-x-auto pb-4">
+          <img src="/ss1.png" className="rounded-2xl w-56 shadow-lg" />
+          <img src="/ss2.png" className="rounded-2xl w-56 shadow-lg" />
+          <img src="/ss3.png" className="rounded-2xl w-56 shadow-lg" />
         </div>
-      </div>
+      </section>
 
       {/* FEATURES */}
-      <div style={{
-        padding: "0 20px",
-        fontSize: "14px",
-        opacity: 0.9,
-        lineHeight: "1.8"
-      }}>
-        ✔ Instant Match  
-        <br />
-        ✔ 100% Private Video Calls  
-        <br />
-        ✔ HD Quality Streaming  
-        <br />
-        ✔ Safe & Secure  
-      </div>
+      <section className="px-6 pb-20 text-center">
+        <h2 className="text-2xl font-semibold mb-6">
+          Why Choose This App?
+        </h2>
 
-      {/* STICKY CTA */}
-      <div style={{
-        position: "fixed",
-        bottom: "0",
-        width: "100%",
-        background: "#000",
-        padding: "18px",
-        textAlign: "center",
-        boxShadow: "0 -5px 25px rgba(0,0,0,0.6)"
-      }}>
-        <a href="/app.apk" style={{
-          background: "linear-gradient(90deg,#ff0055,#ff3c00)",
-          padding: "16px 50px",
-          borderRadius: "60px",
-          color: "#fff",
-          fontWeight: "bold",
-          textDecoration: "none",
-          fontSize: "17px",
-          boxShadow: "0 0 30px rgba(255,0,120,0.8)",
-          animation: "pulse 1.8s infinite"
-        }}>
-          🚀 Start Live Video Chat
+        <div className="space-y-4 text-gray-300">
+          <p>🔒 Secure & Private 1-to-1 Calls</p>
+          <p>💎 Verified Indian Profiles</p>
+          <p>⚡ Instant Recharge & Access</p>
+          <p>📱 Android Exclusive Experience</p>
+        </div>
+      </section>
+
+      {/* DOWNLOAD */}
+      <section
+        id="download"
+        className="fixed bottom-0 w-full bg-[#0f0f14] p-4 border-t border-white/10"
+      >
+        <a
+          href="#"
+          className="block text-center bg-gradient-to-r from-pink-500 to-red-500 py-3 rounded-full font-semibold"
+        >
+          Download Now & Start Calling
         </a>
-      </div>
+      </section>
 
-      {/* Pulse Animation */}
-      <style>
-        {`
-          @keyframes pulse {
-            0% { box-shadow: 0 0 15px rgba(255,0,120,0.6); }
-            50% { box-shadow: 0 0 35px rgba(255,0,120,1); }
-            100% { box-shadow: 0 0 15px rgba(255,0,120,0.6); }
-          }
-        `}
-      </style>
-
-    </div>
+    </main>
   );
-            }
+}
