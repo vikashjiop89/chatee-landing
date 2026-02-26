@@ -1,90 +1,153 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 export default function Home() {
+  const [usersOnline, setUsersOnline] = useState(8243);
+
+  // Fake live counter effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setUsersOnline((prev) => prev + Math.floor(Math.random() * 3));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-600 text-white flex flex-col items-center px-4">
+    <div style={{
+      minHeight: "100vh",
+      background: "linear-gradient(180deg,#1a0026,#2d004d,#000)",
+      color: "#fff",
+      fontFamily: "Arial, sans-serif",
+      paddingBottom: "100px"
+    }}>
 
-      {/* HERO SECTION */}
-      <div className="w-full max-w-md text-center pt-10">
+      {/* HERO */}
+      <div style={{ textAlign: "center", padding: "40px 20px" }}>
 
-        <h1 className="text-3xl font-bold leading-tight">
-          India’s Fastest Growing <br /> Private Video Call App
+        <h1 style={{ fontSize: "28px", fontWeight: "bold" }}>
+          Meet Beautiful Girls <br /> Live Video Instantly
         </h1>
 
-        <p className="mt-3 text-sm opacity-90">
-          ⭐ 4.8 Rating • 5,000+ Downloads • Verified Users
+        <p style={{ marginTop: "10px", opacity: 0.8 }}>
+          🟢 {usersOnline}+ Users Online Now
         </p>
 
-        {/* Phone Mockup */}
-        <div className="mt-8 flex justify-center">
-          <div className="w-64 h-[500px] bg-black rounded-[40px] shadow-2xl p-2 rotate-6">
+        <p style={{ marginTop: "5px", fontSize: "14px", opacity: 0.7 }}>
+          Private • Secure • Verified Profiles
+        </p>
+
+      </div>
+
+      {/* GIRL PROFILE PREVIEW */}
+      <div style={{
+        display: "flex",
+        gap: "15px",
+        overflowX: "auto",
+        padding: "0 20px"
+      }}>
+
+        {["girl1.jpg","girl2.jpg","girl3.jpg"].map((img, i) => (
+          <div key={i} style={{
+            minWidth: "140px",
+            background: "#111",
+            borderRadius: "20px",
+            padding: "8px",
+            boxShadow: "0 10px 30px rgba(255,0,120,0.4)"
+          }}>
             <img
-              src="/phone.png"
-              alt="App Preview"
-              className="w-full h-full object-cover rounded-[32px]"
+              src={`/${img}`}
+              style={{
+                width: "100%",
+                height: "180px",
+                objectFit: "cover",
+                borderRadius: "15px"
+              }}
             />
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              marginTop: "6px",
+              fontSize: "13px"
+            }}>
+              <span style={{
+                width: "8px",
+                height: "8px",
+                background: "limegreen",
+                borderRadius: "50%",
+                marginRight: "6px"
+              }}></span>
+              Live Now
+            </div>
           </div>
-        </div>
+        ))}
 
-        {/* CTA Button */}
-        <a
-          href="#download"
-          className="mt-8 inline-block bg-white text-purple-700 font-semibold px-8 py-4 rounded-full shadow-xl text-lg"
-        >
-          🚀 Download for Android
+      </div>
+
+      {/* PHONE MOCKUP */}
+      <div style={{ textAlign: "center", marginTop: "40px" }}>
+        <img
+          src="/phone.png"
+          style={{
+            width: "75%",
+            maxWidth: "320px",
+            borderRadius: "30px",
+            boxShadow: "0 20px 50px rgba(255,0,120,0.5)"
+          }}
+        />
+      </div>
+
+      {/* SCREENSHOTS */}
+      <div style={{ padding: "30px 20px" }}>
+        <h2 style={{ fontSize: "20px", marginBottom: "15px" }}>
+          App Preview
+        </h2>
+
+        <div style={{
+          display: "flex",
+          gap: "15px",
+          overflowX: "auto"
+        }}>
+          <img src="/ss1.png" style={{ width: "140px", borderRadius: "20px" }} />
+          <img src="/ss2.png" style={{ width: "140px", borderRadius: "20px" }} />
+          <img src="/ss3.png" style={{ width: "140px", borderRadius: "20px" }} />
+        </div>
+      </div>
+
+      {/* FEATURES */}
+      <div style={{ padding: "0 20px", fontSize: "14px", opacity: 0.9 }}>
+        ✔ Instant Match  
+        <br />
+        ✔ 100% Private Calls  
+        <br />
+        ✔ HD Video Quality  
+        <br />
+        ✔ Safe & Secure  
+      </div>
+
+      {/* STICKY DOWNLOAD BUTTON */}
+      <div style={{
+        position: "fixed",
+        bottom: "0",
+        width: "100%",
+        background: "#000",
+        padding: "15px",
+        textAlign: "center",
+        boxShadow: "0 -5px 20px rgba(0,0,0,0.5)"
+      }}>
+        <a href="/app.apk" style={{
+          background: "linear-gradient(90deg,#ff0055,#ff4d00)",
+          padding: "14px 40px",
+          borderRadius: "50px",
+          color: "#fff",
+          fontWeight: "bold",
+          textDecoration: "none",
+          fontSize: "16px",
+          boxShadow: "0 10px 30px rgba(255,0,120,0.6)"
+        }}>
+          🔥 Start Live Video Chat
         </a>
-
       </div>
-
-      {/* FEATURES SECTION */}
-      <div className="w-full max-w-md mt-16 space-y-4">
-
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4">
-          ✔ 100% Private Calls
-        </div>
-
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4">
-          ✔ Real Verified Profiles
-        </div>
-
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4">
-          ✔ HD Video Quality
-        </div>
-
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4">
-          ✔ Safe & Secure Experience
-        </div>
-
-      </div>
-
-      {/* APP PREVIEW SECTION */}
-      <div className="w-full max-w-md mt-16 text-center">
-
-        <h2 className="text-2xl font-semibold mb-6">App Preview</h2>
-
-        <div className="flex gap-4 overflow-x-auto pb-4">
-          <img src="/ss1.png" className="w-40 rounded-3xl shadow-xl" alt="Screenshot 1" />
-          <img src="/ss2.png" className="w-40 rounded-3xl shadow-xl" alt="Screenshot 2" />
-          <img src="/ss3.png" className="w-40 rounded-3xl shadow-xl" alt="Screenshot 3" />
-        </div>
-
-      </div>
-
-      {/* Sticky Download Button */}
-      <div
-        id="download"
-        className="fixed bottom-0 left-0 w-full bg-black p-4 flex justify-center"
-      >
-        <a
-          href="/app.apk"
-          className="bg-green-500 text-white font-bold px-10 py-4 rounded-full text-lg shadow-lg"
-        >
-          ⬇ Download Now – Free
-        </a>
-      </div>
-
-      {/* Bottom spacing so content not hidden */}
-      <div className="h-24"></div>
 
     </div>
   );
