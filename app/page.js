@@ -38,17 +38,15 @@ export default function Home() {
 
       {/* PREVIEW SECTION */}
       <section className="preview">
-        <div className="preview-box">
-          <div className="screen"></div>
-        </div>
-        <div className="preview-text">
-          <h2>Modern & Clean Interface</h2>
-          <p>
-            Designed with simplicity and performance in mind.
-            Optimized for both desktop and mobile.
-          </p>
-        </div>
-      </section>
+  <div className="preview-box">
+    <div className="screen">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</section>
 
       {/* FEATURES */}
       <section className="features">
