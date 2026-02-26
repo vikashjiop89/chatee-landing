@@ -6,83 +6,65 @@ export default function Home() {
 
       {/* NAVBAR */}
       <nav className="navbar">
-        <div className="logo">LiveConnect</div>
-        <div className="nav-links">
-          <a href="#">Features</a>
-          <a href="#">Pricing</a>
-          <a href="#">Contact</a>
-        </div>
+        <div className="logo">Chatee</div>
       </nav>
 
-      {/* HERO */}
+      {/* HERO DOWNLOAD SECTION */}
       <section className="hero">
-        <h1>Connect Instantly With Anyone</h1>
-        <p>Secure and seamless real-time communication platform.</p>
-        <button>Start Now</button>
+        <div className="hero-text">
+          <h1>Meet New People Instantly</h1>
+          <p>Start real-time video chats with verified users worldwide.</p>
 
-        <div className="stats">
-          <div>
-            <h2>10K+</h2>
-            <p>Active Users</p>
-          </div>
-          <div>
-            <h2>99%</h2>
-            <p>Uptime</p>
-          </div>
-          <div>
-            <h2>24/7</h2>
-            <p>Support</p>
+          <a href="#" className="download-btn">
+            Download for Android
+          </a>
+
+          <span className="available">Available on Google Play</span>
+        </div>
+
+        <div className="phone">
+          <div className="screen">
+            <div className="avatar"></div>
+            <div className="avatar"></div>
+            <div className="avatar"></div>
           </div>
         </div>
       </section>
 
-      {/* PREVIEW SECTION */}
-      <section className="preview">
-  <div className="preview-box">
-    <div className="screen">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-</section>
+      {/* WHY DOWNLOAD */}
+      <section className="why">
+        <h2>Why Download Chatee?</h2>
 
-      {/* FEATURES */}
-      <section className="features">
-        <div className="card">
-          <h3>Verified Profiles</h3>
-          <p>Connect with trusted and real users.</p>
-        </div>
-        <div className="card">
-          <h3>HD Video Calls</h3>
-          <p>High-quality 1-on-1 communication.</p>
-        </div>
-        <div className="card">
-          <h3>Fast & Secure</h3>
-          <p>Optimized and encrypted infrastructure.</p>
+        <div className="why-grid">
+          <div className="card">
+            <h3>Verified Users</h3>
+            <p>Connect only with real and active profiles.</p>
+          </div>
+
+          <div className="card">
+            <h3>Instant Matching</h3>
+            <p>Start chatting within seconds.</p>
+          </div>
+
+          <div className="card">
+            <h3>Safe & Secure</h3>
+            <p>Encrypted and privacy-focused platform.</p>
+          </div>
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <section className="testimonial">
-        <p>
-          “One of the smoothest communication platforms I’ve used.
-          Clean design and great performance.”
-        </p>
-        <h4>— Happy User</h4>
-      </section>
-
-      {/* CTA */}
+      {/* FINAL CTA */}
       <section className="cta">
-        <h2>Ready to Experience It?</h2>
-        <button>Join Now</button>
+        <h2>Ready to Start?</h2>
+        <a href="#" className="download-btn big">
+          Download Now
+        </a>
       </section>
 
       <footer>
-        © 2026 LiveConnect. All rights reserved.
+        © 2026 Chatee App. All rights reserved.
       </footer>
 
     </div>
   );
-        }
+}
