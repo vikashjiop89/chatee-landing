@@ -1,37 +1,59 @@
+"use client";
 import "./page.css";
+import { useState } from "react";
 
 export default function Home() {
+
+  const [downloading, setDownloading] = useState(false);
+
+  const handleDownload = () => {
+    setDownloading(true);
+
+    const link = document.createElement("a");
+    link.href = "/chatee.apk";
+    link.download = "chatee.apk";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    setTimeout(() => {
+      setDownloading(false);
+    }, 1500);
+  };
+
   return (
-    <div>
+    <div className="container">
 
       {/* NAVBAR */}
       <nav className="navbar">
         <div className="logo">Chatee</div>
       </nav>
 
-      {/* HERO DOWNLOAD SECTION */}
+      {/* HERO */}
       <section className="hero">
         <div className="hero-text">
           <h1>Meet New People Instantly</h1>
-          <p>Start real-time video chats with verified users worldwide.</p>
+          <p>
+            Start real-time video chats with verified users worldwide.
+          </p>
 
-          <a href="#" className="download-btn">
-            Download for Android
-          </a>
+          <button onClick={handleDownload} className="download-btn">
+            {downloading ? "Downloading..." : "Download for Android"}
+          </button>
 
-          <span className="available">Available on Google Play</span>
+          <div className="rating">
+            ⭐⭐⭐⭐⭐ 4.8 Rating • 25K+ Downloads
+          </div>
         </div>
 
         <div className="phone">
           <div className="screen">
-            <div className="avatar"></div>
-            <div className="avatar"></div>
-            <div className="avatar"></div>
+            <img src="/app.png" alt="App Preview" />
           </div>
         </div>
       </section>
 
-      {/* WHY DOWNLOAD */}
+      {/* WHY */}
       <section className="why">
         <h2>Why Download Chatee?</h2>
 
@@ -56,15 +78,23 @@ export default function Home() {
       {/* FINAL CTA */}
       <section className="cta">
         <h2>Ready to Start?</h2>
-        <a href="#" className="download-btn big">
-          Download Now
-        </a>
+
+        <button onClick={handleDownload} className="download-btn big">
+          {downloading ? "Downloading..." : "Download Now"}
+        </button>
       </section>
 
       <footer>
         © 2026 Chatee App. All rights reserved.
       </footer>
 
+      {/* STICKY DOWNLOAD */}
+      <div className="sticky-download">
+        <button onClick={handleDownload} className="download-btn">
+          {downloading ? "Downloading..." : "Download App"}
+        </button>
+      </div>
+
     </div>
   );
-}
+        }
