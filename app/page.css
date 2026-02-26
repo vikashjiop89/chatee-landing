@@ -136,3 +136,15 @@ footer {
   justify-content: center;
   box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
 }
+/* ===== DEVICES IMAGE SECTION ===== */
+
+.devices-image {
+  max-width: 600px;
+}
+
+.devices-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.8));
+}
