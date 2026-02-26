@@ -1,83 +1,87 @@
-"use client";
-
 export default function Home() {
   return (
-    <main className="bg-gradient-to-b from-[#0f0f14] via-[#141420] to-[#0f0f14] text-white min-h-screen font-sans overflow-x-hidden">
+    <main className="bg-[#0a0a0f] text-white min-h-screen font-sans overflow-x-hidden">
 
       {/* HERO SECTION */}
-      <section className="flex flex-col items-center text-center px-5 pt-14 pb-16">
+      <section className="relative flex flex-col items-center text-center px-6 pt-20 pb-20">
 
-        <div className="mb-3">
-          <span className="bg-green-500/20 text-green-400 px-4 py-1 rounded-full text-sm">
-            ● Girls Online Now
-          </span>
-        </div>
+        {/* Neon Glow Background */}
+        <div className="absolute w-72 h-72 bg-pink-600/30 blur-[120px] rounded-full top-20"></div>
 
-        <h1 className="text-3xl font-bold leading-snug mb-3">
-          Private 1-to-1 Video Calls
-          <br />
-          With Verified Indian Girls
+        <span className="relative bg-red-600 px-4 py-1 rounded-full text-sm font-medium mb-4 animate-pulse">
+          🔴 LIVE NOW
+        </span>
+
+        <h1 className="relative text-3xl font-bold leading-tight mb-4">
+          Talk Live With Verified Indian Girls
         </h1>
 
-        <p className="text-gray-400 text-base max-w-sm mb-6">
-          Recharge and start your secure private video call instantly.
-          Simple. Direct. Private.
+        <p className="relative text-gray-400 max-w-sm mb-8">
+          Private 1-to-1 video calls. Recharge and connect instantly.
+          Safe, secure and direct.
         </p>
 
         <a
           href="#download"
-          className="bg-gradient-to-r from-pink-500 to-red-500 px-8 py-3 rounded-full text-lg font-semibold shadow-lg shadow-pink-500/30 active:scale-95 transition"
+          className="relative bg-gradient-to-r from-pink-500 to-red-600 px-8 py-4 rounded-full text-lg font-semibold shadow-lg shadow-red-500/40 active:scale-95 transition"
         >
-          Start Private Call
+          Start Live Video Call
         </a>
 
-        {/* PHONE MOCKUP */}
-        <div className="relative mt-12">
+      </section>
 
-          {/* Glow background */}
-          <div className="absolute inset-0 bg-pink-500/20 blur-3xl rounded-full"></div>
+      {/* LIVE PROFILES SECTION */}
+      <section className="px-6 pb-20">
 
-          {/* Phone frame */}
-          <div className="relative w-64 h-[520px] bg-black rounded-[40px] border-[6px] border-gray-800 shadow-2xl overflow-hidden">
+        <h2 className="text-xl font-semibold mb-6 text-center">
+          Girls Online Right Now
+        </h2>
 
-            {/* Screen */}
-            <img
-              src="/ss1.png"
-              alt="App Screen"
-              className="w-full h-full object-cover"
-            />
+        <div className="grid grid-cols-2 gap-4">
+
+          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <img src="/ss1.png" className="w-full h-48 object-cover" />
+            <span className="absolute top-2 left-2 bg-red-600 text-xs px-2 py-1 rounded-full">
+              ● Live
+            </span>
+          </div>
+
+          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <img src="/ss2.png" className="w-full h-48 object-cover" />
+            <span className="absolute top-2 left-2 bg-red-600 text-xs px-2 py-1 rounded-full">
+              ● Live
+            </span>
+          </div>
+
+          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <img src="/ss3.png" className="w-full h-48 object-cover" />
+            <span className="absolute top-2 left-2 bg-red-600 text-xs px-2 py-1 rounded-full">
+              ● Live
+            </span>
+          </div>
+
+          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <img src="/ss1.png" className="w-full h-48 object-cover" />
+            <span className="absolute top-2 left-2 bg-red-600 text-xs px-2 py-1 rounded-full">
+              ● Live
+            </span>
           </div>
 
         </div>
 
       </section>
 
-      {/* SCREENSHOT PREVIEW */}
-      <section className="px-5 pb-16">
-
-        <h2 className="text-xl font-semibold text-center mb-6">
-          App Preview
-        </h2>
-
-        <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
-          <img src="/ss1.png" className="w-48 rounded-2xl shadow-lg snap-center" />
-          <img src="/ss2.png" className="w-48 rounded-2xl shadow-lg snap-center" />
-          <img src="/ss3.png" className="w-48 rounded-2xl shadow-lg snap-center" />
-        </div>
-
-      </section>
-
       {/* FEATURES */}
-      <section className="px-5 pb-24 text-center">
+      <section className="px-6 pb-24 text-center">
 
         <h2 className="text-xl font-semibold mb-6">
-          Why Choose This App?
+          Why Users Love It
         </h2>
 
-        <div className="space-y-4 text-gray-300 text-base">
-          <p>🔒 Secure & Private 1-to-1 Calls</p>
-          <p>💎 Verified Profiles</p>
+        <div className="space-y-4 text-gray-300">
+          <p>🔒 Secure Private Calls</p>
           <p>⚡ Instant Recharge & Access</p>
+          <p>💎 Verified Profiles</p>
           <p>📱 Smooth Android Experience</p>
         </div>
 
@@ -86,16 +90,16 @@ export default function Home() {
       {/* STICKY DOWNLOAD */}
       <div
         id="download"
-        className="fixed bottom-0 w-full bg-[#111118] border-t border-white/10 p-4"
+        className="fixed bottom-0 w-full bg-[#0a0a0f] border-t border-white/10 p-4"
       >
         <a
           href="#"
-          className="block text-center bg-gradient-to-r from-pink-500 to-red-500 py-3 rounded-full text-lg font-semibold shadow-md"
+          className="block text-center bg-gradient-to-r from-pink-500 to-red-600 py-3 rounded-full text-lg font-semibold shadow-md shadow-red-500/30"
         >
-          Download Now & Start Calling
+          Download Now
         </a>
       </div>
 
     </main>
   );
-}
+        }
