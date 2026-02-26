@@ -46,11 +46,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="phone">
-          <div className="screen">
-            <img src="/app.png" alt="App Preview" />
-          </div>
-        </div>
+        <div className="devices-image">
+  <img src="/devices.png" alt="Chatee App Preview" />
+</div>
       </section>
 
       {/* WHY */}
